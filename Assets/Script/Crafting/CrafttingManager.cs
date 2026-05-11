@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using UnityEngine.SceneManagement;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -9,56 +8,62 @@ public class CrafttingManager : MonoBehaviour
     public Image customcusor;
     public Slot[] craftingSlots;
 
+    [Header("UI System References")]
+    public GameObject mainCraftingCanvas; // Tarik Canvas Crafting paling luar ke sini
+    public GameObject mobileControlsUI;   // Tarik UI Joystick & Kamera ke sini
+
+    [Header("Recipe Settings")]
     public List<Item> itemList;
-    public string[] recipes;
-    public Item[] reciperesult;
+    public string[] recipes;        // Syarat urutan nama item
+    public Item[] reciperesult;     // Ikon UI hasil
+
+    [Header("3D Spawner Settings")]
+    // Objek 3D (Prefab) yang akan muncul di dunia nyata
+    public GameObject[] resultPrefabs;
+    // Titik lokasi munculnya item (misal: objek kosong di atas meja)
+    public Transform spawnPoint;
+
+    [Header("UI Buttons & Result")]
     public Slot resultslot;
-    public Button backButton;
-    public string sceneName;
+    public Button craftButton; // Tombol untuk mengeksekusi rakitan
+    public Button closeButton; // Tombol untuk sekadar menutup Canvas
+
+    // Variabel internal untuk mengingat resep mana yang sedang terbentuk
+    private int matchedRecipeIndex = -1;
 
     private void Start()
     {
-        backButton.gameObject.SetActive(false);
+        craftButton.gameObject.SetActive(false);
         itemList = new List<Item>(craftingSlots.Length);
+
         for (int i = 0; i < craftingSlots.Length; i++)
         {
             itemList.Add(null);
         }
 
-        foreach (Slot slot in craftingSlots)
-        {
-            slot.item = null;
-            slot.gameObject.SetActive(false);
-        }
-
-        resultslot.item = null;
-        resultslot.gameObject.SetActive(false);
+        ResetUISlots();
     }
 
     private void Update()
     {
-        // 1. Variabel penampung input (Bisa Jari, Bisa Mouse)
         bool isInputUp = false;
         Vector2 inputPosition = Vector2.zero;
 
-        // 2. Deteksi Sentuhan Layar (MOBILE)
         if (Input.touchCount > 0)
         {
             Touch touch = Input.GetTouch(0);
             if (touch.phase == TouchPhase.Ended)
             {
                 isInputUp = true;
-                inputPosition = touch.position; // Ambil titik terakhir jari diangkat
+                inputPosition = touch.position;
             }
         }
-        // 3. Fallback Deteksi Klik (UNITY EDITOR / PC)
         else if (Input.GetMouseButtonUp(0))
         {
             isInputUp = true;
             inputPosition = Input.mousePosition;
         }
 
-        // 4. Logika menempatkan item ke Slot
         if (isInputUp)
         {
             if (currentitem != null)
@@ -69,7 +74,6 @@ public class CrafttingManager : MonoBehaviour
 
                 foreach (Slot slot in craftingSlots)
                 {
-                    // Hitung jarak menggunakan inputPosition yang sudah universal (Jari/Mouse)
                     float dist = Vector2.Distance(inputPosition, slot.transform.position);
 
                     if (dist < shortestdistance)
@@ -79,7 +83,6 @@ public class CrafttingManager : MonoBehaviour
                     }
                 }
 
-                // Pastikan nearestslot ditemukan sebelum mengubahnya (Safety Check)
                 if (nearestslot != null)
                 {
                     nearestslot.gameObject.SetActive(true);
@@ -98,7 +101,8 @@ public class CrafttingManager : MonoBehaviour
     {
         resultslot.gameObject.SetActive(false);
         resultslot.item = null;
-        backButton.gameObject.SetActive(false);
+        craftButton.gameObject.SetActive(false);
+        matchedRecipeIndex = -1; // Reset index
 
         string currentRecipeString = "";
         foreach (Item item in itemList)
@@ -113,22 +117,94 @@ public class CrafttingManager : MonoBehaviour
                 resultslot.gameObject.SetActive(true);
                 resultslot.GetComponent<Image>().sprite = reciperesult[i].GetComponent<Image>().sprite;
                 resultslot.item = reciperesult[i];
-                backButton.gameObject.SetActive(true);
-                PlayerPrefs.SetInt("CraftingComplete", 1);
-                PlayerPrefs.Save();
+
+                craftButton.gameObject.SetActive(true); // Nyalakan tombol Craft
+                matchedRecipeIndex = i; // Simpan index resep yang cocok
                 return;
             }
         }
     }
 
-    public void OnClickBackButton()
+    // ==========================================
+    // FUNGSI TOMBOL CRAFT (RAKIT)
+    // ==========================================
+    public void OnClickCraftButton()
     {
-        string nextScene = PlayerPrefs.GetString("NextScene", "");
-
-        if (!string.IsNullOrEmpty(nextScene))
+        if (matchedRecipeIndex != -1 && matchedRecipeIndex < resultPrefabs.Length)
         {
-            SceneManager.LoadScene(nextScene);
+            // 1. Munculkan Objek 3D di Dunia
+            if (spawnPoint != null && resultPrefabs[matchedRecipeIndex] != null)
+            {
+                Instantiate(resultPrefabs[matchedRecipeIndex], spawnPoint.position, spawnPoint.rotation);
+                Debug.Log("Item hasil crafting berhasil dimunculkan!");
+            }
+            else
+            {
+                Debug.LogWarning("Spawn Point atau Result Prefab 3D belum diatur di Inspector!");
+            }
+
+            // 2. Kosongkan "Tas" karena bahan-bahannya sudah terpakai
+            CollectItem.inventoryPlayer.Clear();
+
+            // 3. Tutup UI Crafting
+            TutupCanvasCrafting();
         }
+    }
+
+    // ==========================================
+    // FUNGSI TOMBOL CLOSE (X / KEMBALI)
+    // ==========================================
+    public void OnClickCloseButton()
+    {
+        TutupCanvasCrafting();
+    }
+
+    // Fungsi internal untuk membersihkan UI dan mematikan Canvas
+    // Fungsi internal untuk membersihkan UI dan mematikan Canvas
+    private void TutupCanvasCrafting()
+    {
+        // Batalkan jika ada item yang sedang dipegang (nempel di kursor)
+        if (currentitem != null)
+        {
+            currentitem = null;
+            customcusor.gameObject.SetActive(false);
+        }
+
+        ResetUISlots();
+
+        // Normalkan waktu game
+        Time.timeScale = 1f;
+
+        // 1. MATIKAN CANVAS UTAMA, BUKAN HANYA MANAGER-NYA
+        if (mainCraftingCanvas != null)
+        {
+            mainCraftingCanvas.SetActive(false);
+        }
+
+        // 2. NYALAKAN KEMBALI KONTROL MOBILE
+        if (mobileControlsUI != null)
+        {
+            mobileControlsUI.SetActive(true);
+        }
+    }
+
+    private void ResetUISlots()
+    {
+        for (int i = 0; i < craftingSlots.Length; i++)
+        {
+            craftingSlots[i].item = null;
+            if (craftingSlots[i].GetComponent<Image>() != null)
+            {
+                craftingSlots[i].GetComponent<Image>().sprite = null;
+            }
+            craftingSlots[i].gameObject.SetActive(false);
+            itemList[i] = null;
+        }
+
+        resultslot.item = null;
+        resultslot.gameObject.SetActive(false);
+        craftButton.gameObject.SetActive(false);
+        matchedRecipeIndex = -1;
     }
 
     public void OnCkickSlot(Slot slot)

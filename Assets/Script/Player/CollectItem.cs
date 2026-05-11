@@ -1,8 +1,13 @@
 using UnityEngine;
+using System.Collections.Generic;
 
 public class CollectItem : MonoBehaviour
 {
-    public static bool hasKerikil, hasArang, hasSpons, hasIjuk, hasBotol;
+    // Ini adalah "Tas" digital pemain. Semua item masuk ke sini.
+    public static List<string> inventoryPlayer = new List<string>();
+
+    [Header("Identitas Item")]
+    // Tulis nama item di Inspector Unity! (Misal: Baskom, Pipa, Kerikil)
     public string itemName;
 
     public static CollectItem itemTerdekat;
@@ -13,7 +18,6 @@ public class CollectItem : MonoBehaviour
         {
             itemTerdekat = this;
 
-            // Nyalakan tombol ambil dari referensi statis di PlayerMovement
             if (PlayerMovement.tombolAmbilStatic != null)
             {
                 PlayerMovement.tombolAmbilStatic.SetActive(true);
@@ -29,7 +33,6 @@ public class CollectItem : MonoBehaviour
             {
                 itemTerdekat = null;
 
-                // Matikan tombol UI karena player menjauh
                 if (PlayerMovement.tombolAmbilStatic != null)
                 {
                     PlayerMovement.tombolAmbilStatic.SetActive(false);
@@ -40,34 +43,21 @@ public class CollectItem : MonoBehaviour
 
     public void Collect()
     {
-        switch (itemName)
+        // Masukkan NAMA ITEM ke dalam tas pemain
+        if (!inventoryPlayer.Contains(itemName))
         {
-            case "Kerikil":
-                hasKerikil = true;
-                break;
-            case "Arang":
-                hasArang = true;
-                break;
-            case "Spons":
-                hasSpons = true;
-                break;
-            case "Ijuk":
-                hasIjuk = true;
-                break;
-            case "Botol":
-                hasBotol = true;
-                break;
+            inventoryPlayer.Add(itemName);
         }
 
-        Debug.Log($"{itemName} telah diambil!");
+        Debug.Log($"{itemName} berhasil dikumpulkan!");
 
-        // Wajib matikan tombol UI sebelum item dihancurkan
+        // Matikan tombol UI
         if (PlayerMovement.tombolAmbilStatic != null)
         {
             PlayerMovement.tombolAmbilStatic.SetActive(false);
         }
 
         itemTerdekat = null;
-        Destroy(gameObject);
+        Destroy(gameObject); // Hapus objek 3D dari map
     }
 }

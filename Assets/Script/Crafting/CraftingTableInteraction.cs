@@ -1,73 +1,76 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
+using System.Collections.Generic; // Wajib ditambahkan untuk menggunakan List
 
 public class CraftingTableInteraction : MonoBehaviour
 {
-    public string craftingSceneName; 
-    public string afterscene1 = "Scene1.2"; 
-    public string afterscene2 = "Scene2.2"; 
-    public string afterscene3 = "Scene3.3";
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("Player") && AllItemsCollected())
-        {
-            
-            string currentSceneName = SceneManager.GetActiveScene().name;
-            PlayerPrefs.SetString("LastScene", currentSceneName); 
-            PlayerPrefs.SetString("NextScene", GetNextScene(currentSceneName)); 
-            PlayerPrefs.Save();
+    [Header("Crafting UI Panel")]
+    public GameObject craftingCanvas;
 
-           
-            SceneManager.LoadScene(craftingSceneName);
+    [Header("Syarat Item untuk Meja Ini")]
+    // List ini akan muncul di Inspector Unity!
+    // Kamu bisa menambah, mengurangi, dan mengganti nama item syaratnya dari sana.
+    [Header("Mobile UI (Joystick & Camera Area)")]
+    public GameObject mobileControlsUI;
+
+    public List<string> requiredItems = new List<string>();
+
+    private void Start()
+    {
+        if (craftingCanvas != null)
+        {
+            craftingCanvas.SetActive(false);
         }
     }
 
-    private string GetNextScene(string currentScene)
+    private void OnTriggerEnter(Collider other)
     {
-        
-        if (currentScene == "Test Android")
+        if (other.CompareTag("Player"))
         {
-            return afterscene1; 
+            if (AllItemsCollected())
+            {
+                BukaCrafting();
+            }
+            else
+            {
+                Debug.Log("Bahan belum lengkap! Kumpulkan bahan sesuai level ini dulu.");
+            }
         }
-        else if (currentScene == "Level 2")
-        {
-            return afterscene2; 
-        }
-        else if (currentScene == "Level 3")
-        {
-            return afterscene3; 
-        }
-        return "";
     }
 
     private bool AllItemsCollected()
     {
-        return CollectItem.hasKerikil && CollectItem.hasArang && CollectItem.hasSpons && CollectItem.hasIjuk && CollectItem.hasBotol;
-    }
-    public static void ResetCollectedItems()
-    {
-        CollectItem.hasKerikil = false;
-        CollectItem.hasArang = false;
-        CollectItem.hasSpons = false;
-        CollectItem.hasIjuk = false;
-        CollectItem.hasBotol = false;
+        // Jika tidak ada syarat item di Inspector, langsung lolos
+        if (requiredItems.Count == 0) return true;
+
+        // Script akan mengecek satu per satu item yang kamu tulis di Inspector
+        foreach (string reqItem in requiredItems)
+        {
+            // Jika pemain TIDAK PUNYA salah satu item tersebut di dalam tasnya
+            if (!CollectItem.inventoryPlayer.Contains(reqItem))
+            {
+                return false; // Langsung tolak, kembalikan nilai false
+            }
+        }
+
+        // Jika loop selesai dan tidak ada yang kurang, berarti item lengkap!
+        return true;
     }
 
-    
-    private void OnEnable()
+    // ==========================================
+    // FUNGSI UNTUK MEMBUKA & MENUTUP UI
+    // ==========================================
+
+    public void BukaCrafting()
     {
-        SceneManager.sceneLoaded += OnSceneLoaded;
+        if (craftingCanvas != null) craftingCanvas.SetActive(true);
+        if (mobileControlsUI != null) mobileControlsUI.SetActive(false); // Sembunyikan kontrol
+        Time.timeScale = 0f;
     }
 
-    private void OnDisable()
+    public void TutupCrafting()
     {
-        SceneManager.sceneLoaded -= OnSceneLoaded;
-    }
-
-    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
-    {
-       
-        ResetCollectedItems();
+        if (craftingCanvas != null) craftingCanvas.SetActive(false);
+        if (mobileControlsUI != null) mobileControlsUI.SetActive(true); // Munculkan kontrol lagi
+        Time.timeScale = 1f;
     }
 }
-
