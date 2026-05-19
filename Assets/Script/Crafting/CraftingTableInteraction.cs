@@ -1,25 +1,27 @@
 using UnityEngine;
-using System.Collections.Generic; // Wajib ditambahkan untuk menggunakan List
+using System.Collections.Generic;
 
 public class CraftingTableInteraction : MonoBehaviour
 {
     [Header("Crafting UI Panel")]
     public GameObject craftingCanvas;
 
-    [Header("Syarat Item untuk Meja Ini")]
-    // List ini akan muncul di Inspector Unity!
-    // Kamu bisa menambah, mengurangi, dan mengganti nama item syaratnya dari sana.
     [Header("Mobile UI (Joystick & Camera Area)")]
     public GameObject mobileControlsUI;
 
+    [Header("Tombol Interaksi")]
+    // Tarik tombol UI "Buka Meja" milikmu ke sini
+    public GameObject tombolBukaCrafting;
+
+    [Header("Syarat Item untuk Meja Ini")]
     public List<string> requiredItems = new List<string>();
 
     private void Start()
     {
-        if (craftingCanvas != null)
-        {
-            craftingCanvas.SetActive(false);
-        }
+        if (craftingCanvas != null) craftingCanvas.SetActive(false);
+
+        // Pastikan tombol interaksi disembunyikan saat game baru dimulai
+        if (tombolBukaCrafting != null) tombolBukaCrafting.SetActive(false);
     }
 
     private void OnTriggerEnter(Collider other)
@@ -28,7 +30,9 @@ public class CraftingTableInteraction : MonoBehaviour
         {
             if (AllItemsCollected())
             {
-                BukaCrafting();
+                // JANGAN panggil BukaCrafting() lagi. 
+                // Cukup nyalakan tombol interaksinya saja.
+                if (tombolBukaCrafting != null) tombolBukaCrafting.SetActive(true);
             }
             else
             {
@@ -37,22 +41,26 @@ public class CraftingTableInteraction : MonoBehaviour
         }
     }
 
+    // Tambahkan ini agar tombol hilang saat pemain menjauhi meja
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            if (tombolBukaCrafting != null) tombolBukaCrafting.SetActive(false);
+        }
+    }
+
     private bool AllItemsCollected()
     {
-        // Jika tidak ada syarat item di Inspector, langsung lolos
         if (requiredItems.Count == 0) return true;
 
-        // Script akan mengecek satu per satu item yang kamu tulis di Inspector
         foreach (string reqItem in requiredItems)
         {
-            // Jika pemain TIDAK PUNYA salah satu item tersebut di dalam tasnya
             if (!CollectItem.inventoryPlayer.Contains(reqItem))
             {
-                return false; // Langsung tolak, kembalikan nilai false
+                return false;
             }
         }
-
-        // Jika loop selesai dan tidak ada yang kurang, berarti item lengkap!
         return true;
     }
 
@@ -60,17 +68,27 @@ public class CraftingTableInteraction : MonoBehaviour
     // FUNGSI UNTUK MEMBUKA & MENUTUP UI
     // ==========================================
 
+    // Fungsi ini sekarang HANYA dipanggil saat tombol interaksi di layar ditekan
     public void BukaCrafting()
     {
         if (craftingCanvas != null) craftingCanvas.SetActive(true);
-        if (mobileControlsUI != null) mobileControlsUI.SetActive(false); // Sembunyikan kontrol
+        if (mobileControlsUI != null) mobileControlsUI.SetActive(false);
+
+        // Sembunyikan tombol interaksi saat layar crafting sedang terbuka
+        if (tombolBukaCrafting != null) tombolBukaCrafting.SetActive(false);
+
         Time.timeScale = 0f;
     }
 
     public void TutupCrafting()
     {
         if (craftingCanvas != null) craftingCanvas.SetActive(false);
-        if (mobileControlsUI != null) mobileControlsUI.SetActive(true); // Munculkan kontrol lagi
+        if (mobileControlsUI != null) mobileControlsUI.SetActive(true);
+
+        // Munculkan lagi tombol interaksinya saat pemain menutup menu 
+        // (karena posisi pemain masih berdiri di dekat meja)
+        if (tombolBukaCrafting != null) tombolBukaCrafting.SetActive(true);
+
         Time.timeScale = 1f;
     }
 }
