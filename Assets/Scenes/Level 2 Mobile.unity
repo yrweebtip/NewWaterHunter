@@ -318,7 +318,7 @@ Transform:
   m_GameObject: {fileID: 13569179}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.53573537, z: -0, w: 0.844386}
-  m_LocalPosition: {x: 0, y: 3.99, z: 0}
+  m_LocalPosition: {x: 43.8, y: 3.99, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1000,6 +1000,7 @@ GameObject:
   - component: {fileID: 190405718}
   - component: {fileID: 190405717}
   - component: {fileID: 190405716}
+  - component: {fileID: 190405720}
   m_Layer: 4
   m_Name: Air
   m_TagString: Untagged
@@ -1052,7 +1053,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 8538bd626cb3e80478f62e319f75e337, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1091,12 +1092,27 @@ Transform:
   m_GameObject: {fileID: 190405715}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.24143, y: 0.9, z: 18.995792}
+  m_LocalPosition: {x: -0.24143, y: 1.8, z: 18.995792}
   m_LocalScale: {x: 23.548, y: 23.548, z: 23.548}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &190405720
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 190405715}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5a5283722386d342ba9e5ba8c7e8f83, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waveHeight: 0.02
+  waveFrequency: 0.5
+  waveSpeed: 2
 --- !u!1001 &204455821
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9779,7 +9795,7 @@ Transform:
   m_GameObject: {fileID: 1104900392}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -50, y: 0, z: -50}
+  m_LocalPosition: {x: -50, y: 0.3, z: -50}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -10020,7 +10036,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d362172b30996946a9e6352f3ac6773, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jalan: {fileID: 1198716042}
 --- !u!82 &1198716045
 AudioSource:
   m_ObjectHideFlags: 0
