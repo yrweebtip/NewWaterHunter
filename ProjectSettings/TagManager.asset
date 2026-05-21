@@ -4,9 +4,7 @@
 TagManager:
   serializedVersion: 3
   tags:
-  - Pickup
-  - water
-  - botol filtrasi
+  - BotolFiltrasi
   layers:
   - Default
   - TransparentFX
