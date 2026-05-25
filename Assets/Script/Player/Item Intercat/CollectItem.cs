@@ -51,6 +51,16 @@ public class CollectItem : MonoBehaviour
 
         Debug.Log($"{itemName} berhasil dikumpulkan!");
 
+        // ==========================================
+        // FITUR BARU: TRIGGER SUBTITLE SEBELUM HANCUR
+        // ==========================================
+        SubtitleData subData = GetComponent<SubtitleData>();
+        if (subData != null)
+        {
+            subData.TriggerThisSubtitle();
+        }
+        // ==========================================
+
         // Matikan tombol UI
         if (PlayerMovement.tombolAmbilStatic != null)
         {
