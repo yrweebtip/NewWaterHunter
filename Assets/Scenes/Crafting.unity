@@ -690,6 +690,8 @@ MonoBehaviour:
   - {fileID: 141889862}
   - {fileID: 385107518}
   - {fileID: 39751565}
+  mainCraftingCanvas: {fileID: 0}
+  mobileControlsUI: {fileID: 0}
   itemList:
   - {fileID: 0}
   - {fileID: 0}
@@ -700,9 +702,11 @@ MonoBehaviour:
   - kerikilarangijuksponsbotol
   reciperesult:
   - {fileID: -6452252555418777896, guid: d05fc80ce7b23a248bdb5e6eb227137f, type: 3}
+  resultPrefabs: []
+  spawnPoint: {fileID: 0}
   resultslot: {fileID: 1372578272}
-  backButton: {fileID: 879607728}
-  sceneName: 
+  craftButton: {fileID: 0}
+  closeButton: {fileID: 0}
 --- !u!1 &627317794
 GameObject:
   m_ObjectHideFlags: 0
@@ -1701,11 +1705,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1516673689396525689, guid: 2654409b238b0c341996b71c98ab8e39, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -621
+      value: -628
       objectReference: {fileID: 0}
     - target: {fileID: 1516673689396525689, guid: 2654409b238b0c341996b71c98ab8e39, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -205.33
+      value: -200
       objectReference: {fileID: 0}
     - target: {fileID: 1516673689396525689, guid: 2654409b238b0c341996b71c98ab8e39, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x

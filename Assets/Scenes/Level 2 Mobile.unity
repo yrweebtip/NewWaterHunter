@@ -9419,6 +9419,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3354639489748096792, guid: f1e7aceaa6827be47bb2f0e00c59c764, type: 3}
+      propertyPath: requiredItems.Array.size
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6975558636885062671, guid: f1e7aceaa6827be47bb2f0e00c59c764, type: 3}
       propertyPath: m_Name
       value: 'Crafting Table '
