@@ -5114,6 +5114,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5826755361933029001, guid: ab4691140a04f9a459d3908721093462, type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: 3d9cfb5f5c368d642bef7a45268b8ec8, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -12379,6 +12383,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Botol
       objectReference: {fileID: 0}
+    - target: {fileID: 9139664690161863538, guid: a1adae4fd71f05f48aad3d119caf50d5, type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: 3d9cfb5f5c368d642bef7a45268b8ec8, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -15552,6 +15560,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sponge
       objectReference: {fileID: 0}
+    - target: {fileID: 8885740084632178680, guid: 2bcb114330f251f4780d1b95b635d20c, type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: 3d9cfb5f5c368d642bef7a45268b8ec8, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -20427,6 +20439,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1694675264}
     m_Modifications:
+    - target: {fileID: 4766664679756439063, guid: d6b8562cdd0d5804f8888910a79f1362, type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: 3d9cfb5f5c368d642bef7a45268b8ec8, type: 3}
     - target: {fileID: 5020022880943498369, guid: d6b8562cdd0d5804f8888910a79f1362, type: 3}
       propertyPath: m_LocalPosition.x
       value: 2.73
@@ -20708,6 +20724,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1694675264}
     m_Modifications:
+    - target: {fileID: 2941590519211050985, guid: 5d92d408ae872e444b12d35902742c92, type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: 3d9cfb5f5c368d642bef7a45268b8ec8, type: 3}
     - target: {fileID: 6220631485035942456, guid: 5d92d408ae872e444b12d35902742c92, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.56
@@ -36499,6 +36519,10 @@ PrefabInstance:
       propertyPath: tombolBukaCrafting
       value: 
       objectReference: {fileID: 983381257}
+    - target: {fileID: 6453904915796899215, guid: f1e7aceaa6827be47bb2f0e00c59c764, type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: 3d9cfb5f5c368d642bef7a45268b8ec8, type: 3}
     - target: {fileID: 6975558636885062671, guid: f1e7aceaa6827be47bb2f0e00c59c764, type: 3}
       propertyPath: m_Name
       value: 'Crafting Table '
