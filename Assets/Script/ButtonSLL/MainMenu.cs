@@ -7,7 +7,7 @@ public class MainMenu : MonoBehaviour
     public void Playbutton()
     {
         
-        SceneManager.LoadScene("Level 1");
+        SceneManager.LoadScene("Level 1 Mobile");
         Time.timeScale = 1f;
     }
 
