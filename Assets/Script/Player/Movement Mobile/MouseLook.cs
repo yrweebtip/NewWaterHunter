@@ -6,7 +6,7 @@ public class MouseLook : MonoBehaviour
     public TouchArea touchArea; // Hubungkan Panel UI transparan ke sini
 
     [Header("Camera Settings")]
-    public float touchSensitivity = 10f;
+    public float touchSensitivity = 5f;
     public Transform playerBody;
 
     private float xRotation = 0f;
