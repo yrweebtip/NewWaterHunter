@@ -16532,7 +16532,7 @@ MonoBehaviour:
   reciperesult:
   - {fileID: 1107126388253199256, guid: 571562fe6928b6546a95204f8571f9e4, type: 3}
   resultPrefabs:
-  - {fileID: 6406212197859065029, guid: c6590f62d594f4f4ea24e77145f52b05, type: 3}
+  - {fileID: 7519201293634077768, guid: 801c388531757d345b8811c5b233c70b, type: 3}
   spawnPoint: {fileID: 1413444333}
   resultslot: {fileID: 770706910}
   craftButton: {fileID: 251487991}
@@ -25981,63 +25981,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 6bba6b5d7ac452b4ea6b5a6d1dcd2aa0, type: 3}
   m_PrefabInstance: {fileID: 821482743}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &292084993254087901
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 6029370618579363455, guid: c6590f62d594f4f4ea24e77145f52b05, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6029370618579363455, guid: c6590f62d594f4f4ea24e77145f52b05, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6029370618579363455, guid: c6590f62d594f4f4ea24e77145f52b05, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6029370618579363455, guid: c6590f62d594f4f4ea24e77145f52b05, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.7071067
-      objectReference: {fileID: 0}
-    - target: {fileID: 6029370618579363455, guid: c6590f62d594f4f4ea24e77145f52b05, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 6029370618579363455, guid: c6590f62d594f4f4ea24e77145f52b05, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6029370618579363455, guid: c6590f62d594f4f4ea24e77145f52b05, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6029370618579363455, guid: c6590f62d594f4f4ea24e77145f52b05, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6029370618579363455, guid: c6590f62d594f4f4ea24e77145f52b05, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6029370618579363455, guid: c6590f62d594f4f4ea24e77145f52b05, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6406212197859065029, guid: c6590f62d594f4f4ea24e77145f52b05, type: 3}
-      propertyPath: m_Name
-      value: Solar Destilasi
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: c6590f62d594f4f4ea24e77145f52b05, type: 3}
 --- !u!1001 &3271625212304882630
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -26466,4 +26409,3 @@ SceneRoots:
   - {fileID: 419975440}
   - {fileID: 2062492287}
   - {fileID: 1299940467}
-  - {fileID: 292084993254087901}
