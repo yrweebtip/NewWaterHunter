@@ -12109,7 +12109,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d634fce10770ed4597c4d2e9f584992, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  subtitles: []
+  subtitles:
+  - Botol ini bisa jadi wadah utama untuk filter.
   subtitleDurations: []
   voiceClips: []
 --- !u!1001 &914041091
@@ -17439,7 +17440,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d634fce10770ed4597c4d2e9f584992, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  subtitles: []
+  subtitles:
+  - Berfungsi sebagai nyerap bau tak sedap, klorin sisa, zat kimia organik, dan buat
+    air lebih terang dan bersih
   subtitleDurations: []
   voiceClips: []
 --- !u!1 &1390974042
@@ -18938,7 +18941,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   subtitles:
-  - Wah ada spons
+  - Spons sangat bagus untuk menyaring menangkap partikel super halus yang masih
+    lolos dari ijuk dan kerikil. Ini lapisan penyaring terakhir sebelum air jatuh
+    ke tampungan.
   subtitleDurations:
   - 4
   voiceClips: []
@@ -20229,7 +20234,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d634fce10770ed4597c4d2e9f584992, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  subtitles: []
+  subtitles:
+  - Serat alami dari pohon aren ini punya tekstur kasar berserat yang efektif menahan
+    partikel-partikel kecil lolos dari kerikil. Semacam filter halus alami.
   subtitleDurations: []
   voiceClips: []
 --- !u!1 &1635491843
@@ -21926,7 +21933,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d634fce10770ed4597c4d2e9f584992, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  subtitles: []
+  subtitles:
+  - tugasnya untuk menahan kotoran kasar, lumpur gede-gede, daun, atau benda asing
+    yang ngambang.
   subtitleDurations: []
   voiceClips: []
 --- !u!1001 &1751288303
