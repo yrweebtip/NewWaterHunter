@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerInteraction : MonoBehaviour
+public class BukaBlueprint : MonoBehaviour
 {
     public GameObject interactionPanel; 
     private bool isPanelActive = false; 
