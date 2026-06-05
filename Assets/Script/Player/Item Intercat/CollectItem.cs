@@ -7,7 +7,6 @@ public class CollectItem : MonoBehaviour
     public static List<string> inventoryPlayer = new List<string>();
 
     [Header("Identitas Item")]
-    // Tulis nama item di Inspector Unity! (Misal: Baskom, Pipa, Kerikil)
     public string itemName;
 
     public static CollectItem itemTerdekat;
@@ -47,6 +46,15 @@ public class CollectItem : MonoBehaviour
         if (!inventoryPlayer.Contains(itemName))
         {
             inventoryPlayer.Add(itemName);
+
+            // ========================================================
+            // TAMBAHAN BARU: Update angka counter UI saat item baru masuk tas
+            // ========================================================
+            if (ItemCounter.Instance != null)
+            {
+                ItemCounter.Instance.TambahBarang();
+            }
+            // ========================================================
         }
 
         Debug.Log($"{itemName} berhasil dikumpulkan!");
