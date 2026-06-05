@@ -10,15 +10,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: c8333588693c44c448d6305797dbfb2e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.835384
+      value: -5.7091236
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c8333588693c44c448d6305797dbfb2e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.5033956
+      value: 3.5034015
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c8333588693c44c448d6305797dbfb2e, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 2.119562
+      value: 4.418153
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c8333588693c44c448d6305797dbfb2e, type: 3}
       propertyPath: m_LocalRotation.w
@@ -54,7 +54,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: c8333588693c44c448d6305797dbfb2e, type: 3}
       propertyPath: m_TagString
-      value: BotolFiltrasi
+      value: ItemHasil
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

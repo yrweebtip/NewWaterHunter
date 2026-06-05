@@ -47,7 +47,7 @@ public class PickupHandler : MonoBehaviour
         if (Physics.Raycast(raycastOrigin.position, raycastOrigin.forward, out hit, pickupRange))
         {
             // Mengecek apakah objek yang tertabrak sinar memiliki tag "Pickup"
-            if (hit.collider.CompareTag("BotolFiltrasi"))
+            if (hit.collider.CompareTag("ItemHasil"))
             {
                 targetItem = hit.collider.gameObject;
 
