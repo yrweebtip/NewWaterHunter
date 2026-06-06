@@ -8,6 +8,11 @@ public class BukaBlueprint : MonoBehaviour
     [Header("UI Kontrol Layar (Sembunyikan saat buka)")]
     public GameObject mobileControlsUI; // Tarik Canvas/Panel Joystick & Tombol lain ke sini
 
+    [Header("Pengaturan Audio UI")]
+    public AudioSource uiAudioSource; // Sumber suara
+    public AudioClip suaraBuka;       // Suara saat blueprint dibuka
+    public AudioClip suaraTutup;      // Suara saat blueprint ditutup
+
     private void Start()
     {
         // Pastikan blueprint tertutup dan kontrol aktif saat mulai
@@ -20,6 +25,12 @@ public class BukaBlueprint : MonoBehaviour
     // ==========================================
     public void BukaPanelBlueprint()
     {
+        // Putar suara buka (jika file audionya sudah dimasukkan)
+        if (uiAudioSource != null && suaraBuka != null)
+        {
+            uiAudioSource.PlayOneShot(suaraBuka);
+        }
+
         if (blueprintPanel != null) blueprintPanel.SetActive(true);
 
         // Sembunyikan UI joystick dan tombol lainnya
@@ -33,6 +44,12 @@ public class BukaBlueprint : MonoBehaviour
     // ==========================================
     public void TutupPanelBlueprint()
     {
+        // Putar suara tutup (jika file audionya sudah dimasukkan)
+        if (uiAudioSource != null && suaraTutup != null)
+        {
+            uiAudioSource.PlayOneShot(suaraTutup);
+        }
+
         if (blueprintPanel != null) blueprintPanel.SetActive(false);
 
         // Munculkan kembali UI joystick dan tombol lainnya

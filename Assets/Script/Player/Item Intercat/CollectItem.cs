@@ -9,6 +9,9 @@ public class CollectItem : MonoBehaviour
     [Header("Identitas Item")]
     public string itemName;
 
+    [Header("Audio Pengambilan")]
+    public AudioClip suaraAmbil; // Tarik efek suara MP3/WAV ke sini
+
     public static CollectItem itemTerdekat;
 
     private void OnTriggerEnter(Collider other)
@@ -47,27 +50,30 @@ public class CollectItem : MonoBehaviour
         {
             inventoryPlayer.Add(itemName);
 
-            // ========================================================
-            // TAMBAHAN BARU: Update angka counter UI saat item baru masuk tas
-            // ========================================================
             if (ItemCounter.Instance != null)
             {
                 ItemCounter.Instance.TambahBarang();
             }
-            // ========================================================
         }
 
         Debug.Log($"{itemName} berhasil dikumpulkan!");
 
         // ==========================================
-        // FITUR BARU: TRIGGER SUBTITLE SEBELUM HANCUR
+        // FITUR BARU: PUTAR AUDIO SEBELUM HANCUR
         // ==========================================
+        if (suaraAmbil != null)
+        {
+            // Kita putar persis di posisi Kamera agar suaranya terdengar jelas (2D) 
+            // dan tidak terpotong saat objek item ini dihancurkan
+            AudioSource.PlayClipAtPoint(suaraAmbil, Camera.main.transform.position);
+        }
+        // ==========================================
+
         SubtitleData subData = GetComponent<SubtitleData>();
         if (subData != null)
         {
             subData.TriggerThisSubtitle();
         }
-        // ==========================================
 
         // Matikan tombol UI
         if (PlayerMovement.tombolAmbilStatic != null)

@@ -5,7 +5,6 @@ public class PlayerMovement : MonoBehaviour
     public CharacterController characterController;
 
     [Header("Mobile Inputs")]
-    // Hubungkan On-Screen Joystick dari UI ke variabel ini
     public Joystick movementJoystick;
 
     [Header("Movement Settings")]
@@ -17,6 +16,13 @@ public class PlayerMovement : MonoBehaviour
     public Transform groundCheck;
     public float groundDistance = 0.4f;
     public LayerMask groundLayer;
+
+    [Header("Audio Footsteps")]
+    public AudioSource footstepAudioSource;
+    public AudioClip[] footstepClips; // Menggunakan array agar bisa menaruh lebih dari 1 suara (biar tidak monoton)
+    public float walkStepInterval = 0.5f;   // Jarak waktu antar langkah saat jalan santai
+    public float sprintStepInterval = 0.3f; // Jarak waktu antar langkah saat lari
+    private float stepTimer;
 
     private Vector3 velocity;
     private bool isGrounded;
@@ -30,7 +36,6 @@ public class PlayerMovement : MonoBehaviour
 
     void Awake()
     {
-        // Menyalin referensi UI ke variabel statis saat game dimulai
         tombolAmbilStatic = collectButton;
     }
 
@@ -43,7 +48,6 @@ public class PlayerMovement : MonoBehaviour
 
         currentSpeed = movementSpeed;
 
-        // Nonaktifkan tombol saat game dimulai
         if (tombolAmbilStatic != null)
         {
             tombolAmbilStatic.SetActive(false);
@@ -52,7 +56,6 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        // Mengecek apakah pemain menyentuh tanah agar gravitasi stabil
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundLayer);
 
         if (isGrounded && velocity.y < 0)
@@ -63,19 +66,40 @@ public class PlayerMovement : MonoBehaviour
         HandleMovement();
         HandleSprint();
 
-        // Menjalankan gravitasi
         velocity.y += gravity * Time.deltaTime;
         characterController.Move(velocity * Time.deltaTime);
     }
 
     void HandleMovement()
     {
-        // Input dari Joystick
         float horizontal = movementJoystick.Horizontal;
         float vertical = movementJoystick.Vertical;
 
         Vector3 move = transform.right * horizontal + transform.forward * vertical;
         characterController.Move(move * currentSpeed * Time.deltaTime);
+
+        // ==========================================
+        // LOGIKA FOOTSTEP AUDIO (VERSI JOYSTICK)
+        // ==========================================
+
+        // Kita HAPUS syarat isGrounded.
+        // Sekarang hanya mengecek: "Apakah joystick sedang digeser lebih dari 10%?"
+        if (Mathf.Abs(horizontal) > 0.1f || Mathf.Abs(vertical) > 0.1f)
+        {
+            stepTimer -= Time.deltaTime; // Kurangi timer
+
+            if (stepTimer <= 0f)
+            {
+                PlayFootstepSound();
+                // Atur ulang timer tergantung sedang lari atau jalan
+                stepTimer = isSprinting ? sprintStepInterval : walkStepInterval;
+            }
+        }
+        else
+        {
+            // Reset timer ke 0 jika joystick dilepas
+            stepTimer = 0f;
+        }
     }
 
     void HandleSprint()
@@ -91,16 +115,24 @@ public class PlayerMovement : MonoBehaviour
     }
 
     // ==========================================
-    // FUNGSI PUBLIC UNTUK TOMBOL SPRINT DI UI
+    // FUNGSI MEMUTAR SUARA LANGKAH
     // ==========================================
+    private void PlayFootstepSound()
+    {
+        // Pastikan AudioSource dan Clip sudah diisi di Inspector agar tidak error
+        if (footstepAudioSource != null && footstepClips.Length > 0)
+        {
+            // Pilih satu suara langkah secara acak dari kumpulan array
+            int randomIndex = Random.Range(0, footstepClips.Length);
+            footstepAudioSource.PlayOneShot(footstepClips[randomIndex]);
+        }
+    }
 
-    // Gunakan Event Trigger (PointerDown) pada Button Sprint
     public void OnSprintDown()
     {
         isSprinting = true;
     }
 
-    // Gunakan Event Trigger (PointerUp) pada Button Sprint
     public void OnSprintUp()
     {
         isSprinting = false;
