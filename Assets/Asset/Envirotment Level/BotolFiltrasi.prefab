@@ -149,6 +149,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d634fce10770ed4597c4d2e9f584992, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  subtitles: []
-  subtitleDurations: []
-  voiceClips: []
+  subtitles:
+  - Sekarang alatnya sudah jadi kita harus pergi ke sungai untuk mengambil air kotor
+    buat kita saring
+  subtitleDurations:
+  - 10.7
+  voiceClips:
+  - {fileID: 8300000, guid: 45586aa1e55719345ac03adffec8343d, type: 3}

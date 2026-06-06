@@ -10,15 +10,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: ee85ca23a8fddd9489168c8baaf15176, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 59.549683
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ee85ca23a8fddd9489168c8baaf15176, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.43
+      value: 2.2259696
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ee85ca23a8fddd9489168c8baaf15176, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 6.16
+      value: 47.5987
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ee85ca23a8fddd9489168c8baaf15176, type: 3}
       propertyPath: m_LocalRotation.w
@@ -66,6 +66,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: ee85ca23a8fddd9489168c8baaf15176, type: 3}
       insertIndex: -1
       addedObject: {fileID: 3018171170823438575}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: ee85ca23a8fddd9489168c8baaf15176, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -2158073738283794044}
   m_SourcePrefab: {fileID: 100100000, guid: ee85ca23a8fddd9489168c8baaf15176, type: 3}
 --- !u!1 &4402345797973414549 stripped
 GameObject:
@@ -87,7 +90,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -120,3 +123,22 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 90
   m_CollisionDetection: 0
+--- !u!114 &-2158073738283794044
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4402345797973414549}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d634fce10770ed4597c4d2e9f584992, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  subtitles:
+  - Sekarang alatnya sudah jadi kita harus pergi ke api unggun untuk memasak air
+    ini sampai mendidih
+  subtitleDurations:
+  - 12
+  voiceClips:
+  - {fileID: 8300000, guid: 9bee7dc14fb89f842a7fbc9d91324e8a, type: 3}

@@ -100,6 +100,16 @@ public class PickupHandler : MonoBehaviour
             playerAudioSource.PlayOneShot(suaraAmbil);
         }
 
+        // ==========================================
+        // FITUR BARU: TRIGGER SUBTITLE DARI ITEM
+        // ==========================================
+        SubtitleData subData = item.GetComponent<SubtitleData>();
+        if (subData != null)
+        {
+            subData.TriggerThisSubtitle();
+        }
+        // ==========================================
+
         targetItem = null;
     }
 

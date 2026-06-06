@@ -10,15 +10,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: c8333588693c44c448d6305797dbfb2e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5.7091236
+      value: -0.75998974
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c8333588693c44c448d6305797dbfb2e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.5034015
+      value: 3.5033941
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c8333588693c44c448d6305797dbfb2e, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 4.418153
+      value: 9.299995
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c8333588693c44c448d6305797dbfb2e, type: 3}
       propertyPath: m_LocalRotation.w
@@ -59,5 +59,86 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: c8333588693c44c448d6305797dbfb2e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -5485538496566138222}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: c8333588693c44c448d6305797dbfb2e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6851770227880970925}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: c8333588693c44c448d6305797dbfb2e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8224836915196800999}
   m_SourcePrefab: {fileID: 100100000, guid: c8333588693c44c448d6305797dbfb2e, type: 3}
+--- !u!1 &6406212197859065029 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: c8333588693c44c448d6305797dbfb2e, type: 3}
+  m_PrefabInstance: {fileID: 6063562383352447380}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &-5485538496566138222
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6406212197859065029}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d634fce10770ed4597c4d2e9f584992, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  subtitles:
+  - Sekarang alatnya sudah jadi kita harus pergi ke pesisir pantai agar alatnya terkena
+    sinar matahari
+  subtitleDurations:
+  - 10.5
+  voiceClips:
+  - {fileID: 8300000, guid: dba146d41adb10949b65d998c0b3dd74, type: 3}
+--- !u!135 &6851770227880970925
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6406212197859065029}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.004750482
+  m_Center: {x: 0.0000363898, y: -0.00006760353, z: -0.00039167667}
+--- !u!54 &8224836915196800999
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6406212197859065029}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 90
+  m_CollisionDetection: 0

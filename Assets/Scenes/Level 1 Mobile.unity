@@ -10452,7 +10452,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
+  m_Transition: 0
   m_Colors:
     m_NormalColor: {r: 1, g: 0, b: 0, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
@@ -10472,7 +10472,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 1503654424}
   m_FillRect: {fileID: 1503654422}
   m_HandleRect: {fileID: 0}
@@ -10501,10 +10501,10 @@ RectTransform:
   - {fileID: 1224194572}
   m_Father: {fileID: 1109018027}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -586, y: 394}
-  m_SizeDelta: {x: 650.521, y: 206.865}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 324.972, y: -78.10724}
+  m_SizeDelta: {x: 550, y: 70}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &751777141
 PrefabInstance:
@@ -12878,8 +12878,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   subtitles:
   - Botol ini bisa jadi wadah utama untuk filter.
-  subtitleDurations: []
-  voiceClips: []
+  subtitleDurations:
+  - 4.5
+  voiceClips:
+  - {fileID: 8300000, guid: 5f4c79b059842e64d9f1011f74b46a01, type: 3}
 --- !u!1001 &914041091
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15518,6 +15520,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 751647953}
+  - {fileID: 1418111193}
   m_Father: {fileID: 334757550}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -18121,7 +18124,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -18619,8 +18622,10 @@ MonoBehaviour:
   subtitles:
   - Berfungsi sebagai nyerap bau tak sedap, klorin sisa, zat kimia organik, dan buat
     air lebih terang dan bersih
-  subtitleDurations: []
-  voiceClips: []
+  subtitleDurations:
+  - 12
+  voiceClips:
+  - {fileID: 8300000, guid: 3a436b462d6d15f4f9018bef1cf1a41b, type: 3}
 --- !u!1 &1390974042
 GameObject:
   m_ObjectHideFlags: 0
@@ -18760,6 +18765,81 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   counterText: {fileID: 216999981}
   targetBarang: 5
+--- !u!1 &1418111192
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1418111193}
+  - component: {fileID: 1418111195}
+  - component: {fileID: 1418111194}
+  m_Layer: 5
+  m_Name: Lope
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1418111193
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1418111192}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1109018027}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 76, y: -78.107}
+  m_SizeDelta: {x: 193.72601, y: 185.375}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1418111194
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1418111192}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 29159568b0ae173429d5242e82a783c9, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1418111195
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1418111192}
+  m_CullTransparentMesh: 1
 --- !u!1001 &1424597877
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -20167,8 +20247,9 @@ MonoBehaviour:
     lolos dari ijuk dan kerikil. Ini lapisan penyaring terakhir sebelum air jatuh
     ke tampungan.
   subtitleDurations:
-  - 4
-  voiceClips: []
+  - 17
+  voiceClips:
+  - {fileID: 8300000, guid: 3764d67f9a1d8e843b5e650d1a658170, type: 3}
 --- !u!1 &1489194209
 GameObject:
   m_ObjectHideFlags: 0
@@ -20539,7 +20620,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -21640,8 +21721,10 @@ MonoBehaviour:
   subtitles:
   - Serat alami dari pohon aren ini punya tekstur kasar berserat yang efektif menahan
     partikel-partikel kecil lolos dari kerikil. Semacam filter halus alami.
-  subtitleDurations: []
-  voiceClips: []
+  subtitleDurations:
+  - 16
+  voiceClips:
+  - {fileID: 8300000, guid: 839b1f8cd10ce434fa967be03e2cb49b, type: 3}
 --- !u!1 &1604736115
 GameObject:
   m_ObjectHideFlags: 0
@@ -23752,8 +23835,10 @@ MonoBehaviour:
   subtitles:
   - tugasnya untuk menahan kotoran kasar, lumpur gede-gede, daun, atau benda asing
     yang ngambang.
-  subtitleDurations: []
-  voiceClips: []
+  subtitleDurations:
+  - 11.3
+  voiceClips:
+  - {fileID: 8300000, guid: 71f0ed159c3dcc240a953f38fa736000, type: 3}
 --- !u!1001 &1751288303
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -34795,7 +34880,7 @@ AudioSource:
   m_audioClip: {fileID: 8300000, guid: 28bd57ad9cd08414397a77741ec34a1c, type: 3}
   m_Resource: {fileID: 8300000, guid: 28bd57ad9cd08414397a77741ec34a1c, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 1
   Mute: 0

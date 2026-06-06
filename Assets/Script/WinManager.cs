@@ -1,18 +1,22 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.Video; // Wajib ditambahkan untuk memutar video
+using UnityEngine.Video;
 
 public class WinManager : MonoBehaviour
 {
-    // Singleton agar mudah dipanggil dari script PickupHandler
     public static WinManager Instance;
 
     [Header("UI Panels")]
     public GameObject winCanvas;
-    public GameObject mobileControlsUI; // Untuk mematikan joystick saat menang
+    public GameObject mobileControlsUI;
 
-    [Header("Video Settings")]
+    [Header("Video & Audio Settings")]
     public VideoPlayer winVideoPlayer;
+
+    // ==========================================
+    // VARIABEL BARU UNTUK BGM
+    // ==========================================
+    public AudioSource bgmAudioSource; // Tarik Empty Object BGM ke sini!
 
     [Header("Scene Transition")]
     public string nextLevelName;
@@ -32,23 +36,29 @@ public class WinManager : MonoBehaviour
 
     private void Start()
     {
-        // Pastikan Canvas Win disembunyikan di awal game
         if (winCanvas != null)
         {
             winCanvas.SetActive(false);
         }
     }
 
-    // Fungsi ini akan dipanggil otomatis saat Botol Filtrasi dipegang
     public void ShowWinScreen()
     {
-        // 1. Matikan kontrol pergerakan pemain
         if (mobileControlsUI != null) mobileControlsUI.SetActive(false);
 
-        // 2. Nyalakan Canvas Kemenangan
         if (winCanvas != null) winCanvas.SetActive(true);
 
-        // 3. Putar Video Edukasi/Kemenangan
+        // ==========================================
+        // MATIKAN MUSIK LATAR (BGM)
+        // ==========================================
+        if (bgmAudioSource != null)
+        {
+            bgmAudioSource.Stop();
+        }
+
+        // Menghentikan waktu game
+        Time.timeScale = 0f;
+
         if (winVideoPlayer != null)
         {
             winVideoPlayer.Play();
@@ -60,13 +70,16 @@ public class WinManager : MonoBehaviour
     // ==========================================
     public void OnClickNextLevel()
     {
-        // Kosongkan tas pemain agar tidak terbawa ke level berikutnya
+        Time.timeScale = 1f;
+
         CollectItem.inventoryPlayer.Clear();
         SceneManager.LoadScene(nextLevelName);
     }
 
     public void OnClickMainMenu()
     {
+        Time.timeScale = 1f;
+
         CollectItem.inventoryPlayer.Clear();
         SceneManager.LoadScene(mainMenuName);
     }
