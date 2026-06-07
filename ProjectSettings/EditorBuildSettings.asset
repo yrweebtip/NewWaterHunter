@@ -20,5 +20,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Level 2 Mobile.unity
     guid: bfb3707d21443f449abaa92a4119b4b9
+  - enabled: 1
+    path: Assets/Scenes/Level 3 Mobile.unity
+    guid: 6c5f29c97f7d4784d82d0351e1c674cc
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0
