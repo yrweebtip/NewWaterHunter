@@ -8013,7 +8013,7 @@ MonoBehaviour:
   waitTimeAtPoint: 2
   player: {fileID: 0}
   chaseSpeed: 4
-  detectionRange: 10
+  detectionRange: 7
   stoppingDistance: 1
 --- !u!95 &352657655
 Animator:
@@ -10863,7 +10863,7 @@ AudioSource:
   m_audioClip: {fileID: 8300000, guid: 28bd57ad9cd08414397a77741ec34a1c, type: 3}
   m_Resource: {fileID: 8300000, guid: 28bd57ad9cd08414397a77741ec34a1c, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.7
+  m_Volume: 0.3
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -12163,7 +12163,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -37009,7 +37009,7 @@ MonoBehaviour:
   waitTimeAtPoint: 2
   player: {fileID: 0}
   chaseSpeed: 4
-  detectionRange: 10
+  detectionRange: 7
   stoppingDistance: 1
 --- !u!95 &2097300078
 Animator:
