@@ -13,10 +13,8 @@ public class WinManager : MonoBehaviour
     [Header("Video & Audio Settings")]
     public VideoPlayer winVideoPlayer;
 
-    // ==========================================
-    // VARIABEL BARU UNTUK BGM
-    // ==========================================
-    public AudioSource bgmAudioSource; // Tarik Empty Object BGM ke sini!
+   
+    public AudioSource bgmAudioSource; 
 
     [Header("Scene Transition")]
     public string nextLevelName;
@@ -48,15 +46,13 @@ public class WinManager : MonoBehaviour
 
         if (winCanvas != null) winCanvas.SetActive(true);
 
-        // ==========================================
-        // MATIKAN MUSIK LATAR (BGM)
-        // ==========================================
+        
         if (bgmAudioSource != null)
         {
             bgmAudioSource.Stop();
         }
 
-        // Menghentikan waktu game
+        
         Time.timeScale = 0f;
 
         if (winVideoPlayer != null)
@@ -65,9 +61,7 @@ public class WinManager : MonoBehaviour
         }
     }
 
-    // ==========================================
-    // FUNGSI UNTUK TOMBOL DI WIN CANVAS
-    // ==========================================
+   
     public void OnClickNextLevel()
     {
         Time.timeScale = 1f;
