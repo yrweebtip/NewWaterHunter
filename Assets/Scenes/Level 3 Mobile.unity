@@ -19084,9 +19084,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1049792186}
-        m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
-        m_MethodName: BackToMainMenu
+      - m_Target: {fileID: 1283787357}
+        m_TargetAssemblyTypeName: WinManager, Assembly-CSharp
+        m_MethodName: OnClickMainMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -23228,7 +23228,7 @@ MonoBehaviour:
   winVideoPlayer: {fileID: 1653905995}
   bgmAudioSource: {fileID: 700715174}
   nextLevelName: Level 2 Mobile
-  mainMenuName: TampilanAwalGame
+  mainMenuName: Tampilan Awal Scene
 --- !u!1 &1289356923 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: f5d8cf096dc6c0d4c9e282fbf57dc262, type: 3}

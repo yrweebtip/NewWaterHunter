@@ -17908,7 +17908,7 @@ MonoBehaviour:
   winVideoPlayer: {fileID: 1487710359}
   bgmAudioSource: {fileID: 442667486}
   nextLevelName: Level 3 Mobile
-  mainMenuName: TampilanAwalGame
+  mainMenuName: Tampilan Awal Scene
 --- !u!4 &1226546032
 Transform:
   m_ObjectHideFlags: 0

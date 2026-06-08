@@ -36452,9 +36452,9 @@ MonoBehaviour:
   winCanvas: {fileID: 1060355030}
   mobileControlsUI: {fileID: 334757549}
   winVideoPlayer: {fileID: 792709842}
-  bgmAudioSource: {fileID: 0}
+  bgmAudioSource: {fileID: 1868902292}
   nextLevelName: Level 2 Mobile
-  mainMenuName: TampilanAwalGame
+  mainMenuName: Tampilan Awal Scene
 --- !u!1001 &1990510412
 PrefabInstance:
   m_ObjectHideFlags: 0
