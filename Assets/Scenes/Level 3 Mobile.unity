@@ -9968,10 +9968,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   subtitles:
-  - Berfungsi sebagai nyerap bau tak sedap, klorin sisa, zat kimia organik, dan buat
-    air tidak warna kuning
+  - Sebagai alat bakar untuk pancinya
   subtitleDurations:
-  - 11.2
+  - 5.4
   voiceClips:
   - {fileID: 8300000, guid: 02ebbf5902e492348ab87e0005d66c56, type: 3}
 --- !u!1001 &546556954
