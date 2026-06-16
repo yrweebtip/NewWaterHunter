@@ -3,17 +3,17 @@ using UnityEngine;
 public class PickupHandler : MonoBehaviour
 {
     [Header("Pickup Settings")]
-    public Transform holdPoint;          // Titik tempat item dipegang
-    public float pickupRange = 3.0f;     // Jarak maksimal raycast
-    public Transform raycastOrigin;      // Titik asal sinar (Biasanya kamera atau dada karakter)
+    public Transform holdPoint;          
+    public float pickupRange = 3.0f;     
+    public Transform raycastOrigin;      
 
     [Header("Mobile UI")]
     public GameObject actionButton;
 
     [Header("Audio Settings")]
-    public AudioSource playerAudioSource; // Audio Source pada karakter
-    public AudioClip suaraAmbil;          // Suara saat barang diambil
-    public AudioClip suaraBuang;          // Suara saat barang dilempar/dilepas
+    public AudioSource playerAudioSource; 
+    public AudioClip suaraAmbil;         
+    public AudioClip suaraBuang;          
 
     private GameObject heldItem;
     private GameObject targetItem;
@@ -59,9 +59,7 @@ public class PickupHandler : MonoBehaviour
         if (actionButton != null) actionButton.SetActive(false);
     }
 
-    // ==========================================
-    // FUNGSI UNTUK TOMBOL MOBILE (ON CLICK)
-    // ==========================================
+    
     public void OnActionButtonPressed()
     {
         if (heldItem == null)
@@ -92,23 +90,18 @@ public class PickupHandler : MonoBehaviour
 
         Debug.Log("Item diambil: " + heldItem.name);
 
-        // ==========================================
-        // PUTAR AUDIO AMBIL BARANG
-        // ==========================================
         if (playerAudioSource != null && suaraAmbil != null)
         {
             playerAudioSource.PlayOneShot(suaraAmbil);
         }
 
-        // ==========================================
-        // FITUR BARU: TRIGGER SUBTITLE DARI ITEM
-        // ==========================================
+        
         SubtitleData subData = item.GetComponent<SubtitleData>();
         if (subData != null)
         {
             subData.TriggerThisSubtitle();
         }
-        // ==========================================
+        
 
         targetItem = null;
     }

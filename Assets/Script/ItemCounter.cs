@@ -7,10 +7,10 @@ public class ItemCounter: MonoBehaviour
     public static ItemCounter Instance;
 
     [Header("UI Reference")]
-    public Text counterText; // Ganti jadi public TextMeshProUGUI jika pakai TMP
+    public Text counterText; 
 
     [Header("Pengaturan Jumlah Barang")]
-    public int targetBarang = 5; // Jumlah total barang yang harus dicari di level ini
+    public int targetBarang = 5; 
     private int jumlahSekarang = 0;
 
     private void Awake()
@@ -20,16 +20,13 @@ public class ItemCounter: MonoBehaviour
 
     private void Start()
     {
-        // Set tampilan awal saat game dimulai (misal: 0 / 5)
         UpdateTampilanUI();
     }
 
-    // Fungsi untuk menambah hitungan barang
     public void TambahBarang()
     {
         jumlahSekarang++;
         
-        // Memastikan angka tidak melebihi target
         if (jumlahSekarang > targetBarang) 
         {
             jumlahSekarang = targetBarang;
@@ -38,7 +35,6 @@ public class ItemCounter: MonoBehaviour
         UpdateTampilanUI();
     }
 
-    // Fungsi internal untuk memperbarui teks di layar
     private void UpdateTampilanUI()
     {
         if (counterText != null)

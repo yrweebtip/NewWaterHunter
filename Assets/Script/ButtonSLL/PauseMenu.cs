@@ -64,17 +64,11 @@ public class PauseMenu : MonoBehaviour
 
     public void BackToMainMenu()
     {
-        // Putar suara keluar (Opsional: mungkin tidak sempat terdengar penuh jika scene langsung berganti, 
-        // tapi PlayOneShot akan mencoba memutarnya di frame terakhir sebelum pindah)
         if (uiAudioSource != null && suaraKeluar != null)
         {
             uiAudioSource.PlayOneShot(suaraKeluar);
         }
-
-        // 1. Wajib normalkan waktu dulu sebelum pindah scene
         Time.timeScale = 1f;
-
-        // 2. Pindah ke scene tampilan awal
         SceneManager.LoadScene("Tampilan Awal Scene");
     }
 }

@@ -51,37 +51,19 @@ public class CraftingTableInteraction : MonoBehaviour
     {
 
         if (other.CompareTag("Player"))
-
         {
-
             if (AllItemsCollected())
-
             {
-
-                // JANGAN panggil BukaCrafting() lagi.
-
-                // Cukup nyalakan tombol interaksinya saja.
-
                 if (tombolBukaCrafting != null) tombolBukaCrafting.SetActive(true);
-
             }
-
             else
-
             {
-
                 Debug.Log("Bahan belum lengkap! Kumpulkan bahan sesuai level ini dulu.");
-
             }
 
         }
 
     }
-
-
-
-    // Tambahkan ini agar tombol hilang saat pemain menjauhi meja
-
     private void OnTriggerExit(Collider other)
 
     {
@@ -95,8 +77,6 @@ public class CraftingTableInteraction : MonoBehaviour
         }
 
     }
-
-
 
     private bool AllItemsCollected()
 
@@ -124,18 +104,6 @@ public class CraftingTableInteraction : MonoBehaviour
 
     }
 
-
-
-    // ==========================================
-
-    // FUNGSI UNTUK MEMBUKA & MENUTUP UI
-
-    // ==========================================
-
-
-
-    // Fungsi ini sekarang HANYA dipanggil saat tombol interaksi di layar ditekan
-
     public void BukaCrafting()
 
     {
@@ -144,13 +112,7 @@ public class CraftingTableInteraction : MonoBehaviour
 
         if (mobileControlsUI != null) mobileControlsUI.SetActive(false);
 
-
-
-        // Sembunyikan tombol interaksi saat layar crafting sedang terbuka
-
         if (tombolBukaCrafting != null) tombolBukaCrafting.SetActive(false);
-
-
 
         Time.timeScale = 0f;
 

@@ -25,36 +25,28 @@ public class BukaBlueprint : MonoBehaviour
     // ==========================================
     public void BukaPanelBlueprint()
     {
-        // Putar suara buka (jika file audionya sudah dimasukkan)
         if (uiAudioSource != null && suaraBuka != null)
         {
             uiAudioSource.PlayOneShot(suaraBuka);
         }
 
         if (blueprintPanel != null) blueprintPanel.SetActive(true);
-
-        // Sembunyikan UI joystick dan tombol lainnya
         if (mobileControlsUI != null) mobileControlsUI.SetActive(false);
 
-        Time.timeScale = 0f; // Hentikan waktu
+        Time.timeScale = 0f; 
     }
 
-    // ==========================================
-    // FUNGSI UNTUK TOMBOL "X" / KEMBALI
-    // ==========================================
+    
     public void TutupPanelBlueprint()
     {
-        // Putar suara tutup (jika file audionya sudah dimasukkan)
+       
         if (uiAudioSource != null && suaraTutup != null)
         {
             uiAudioSource.PlayOneShot(suaraTutup);
         }
-
         if (blueprintPanel != null) blueprintPanel.SetActive(false);
 
-        // Munculkan kembali UI joystick dan tombol lainnya
         if (mobileControlsUI != null) mobileControlsUI.SetActive(true);
-
-        Time.timeScale = 1f; // Lanjutkan permainan
+        Time.timeScale = 1f; 
     }
 }

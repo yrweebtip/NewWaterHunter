@@ -19,9 +19,9 @@ public class PlayerMovement : MonoBehaviour
 
     [Header("Audio Footsteps")]
     public AudioSource footstepAudioSource;
-    public AudioClip[] footstepClips; // Menggunakan array agar bisa menaruh lebih dari 1 suara (biar tidak monoton)
-    public float walkStepInterval = 0.5f;   // Jarak waktu antar langkah saat jalan santai
-    public float sprintStepInterval = 0.3f; // Jarak waktu antar langkah saat lari
+    public AudioClip[] footstepClips; 
+    public float walkStepInterval = 0.5f;   
+    public float sprintStepInterval = 0.3f; 
     private float stepTimer;
 
     private Vector3 velocity;
@@ -78,26 +78,19 @@ public class PlayerMovement : MonoBehaviour
         Vector3 move = transform.right * horizontal + transform.forward * vertical;
         characterController.Move(move * currentSpeed * Time.deltaTime);
 
-        // ==========================================
-        // LOGIKA FOOTSTEP AUDIO (VERSI JOYSTICK)
-        // ==========================================
-
-        // Kita HAPUS syarat isGrounded.
-        // Sekarang hanya mengecek: "Apakah joystick sedang digeser lebih dari 10%?"
+      
         if (Mathf.Abs(horizontal) > 0.1f || Mathf.Abs(vertical) > 0.1f)
         {
-            stepTimer -= Time.deltaTime; // Kurangi timer
+            stepTimer -= Time.deltaTime; 
 
             if (stepTimer <= 0f)
             {
                 PlayFootstepSound();
-                // Atur ulang timer tergantung sedang lari atau jalan
                 stepTimer = isSprinting ? sprintStepInterval : walkStepInterval;
             }
         }
         else
         {
-            // Reset timer ke 0 jika joystick dilepas
             stepTimer = 0f;
         }
     }
@@ -114,15 +107,12 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    // ==========================================
-    // FUNGSI MEMUTAR SUARA LANGKAH
-    // ==========================================
     private void PlayFootstepSound()
     {
-        // Pastikan AudioSource dan Clip sudah diisi di Inspector agar tidak error
+        
         if (footstepAudioSource != null && footstepClips.Length > 0)
         {
-            // Pilih satu suara langkah secara acak dari kumpulan array
+            
             int randomIndex = Random.Range(0, footstepClips.Length);
             footstepAudioSource.PlayOneShot(footstepClips[randomIndex]);
         }

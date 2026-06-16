@@ -11,13 +11,11 @@ public class PlayerHealth : MonoBehaviour
     public GameObject gameoverUI;
 
     [Header("Audio Pengaturan")]
-    public AudioSource playerAudioSource; // Sumber suara di karakter
-    public AudioClip gameOverClip;        // File suara Game Over
+    public AudioSource playerAudioSource; 
+    public AudioClip gameOverClip;      
 
-    // ==========================================
-    // VARIABEL BARU UNTUK BGM
-    // ==========================================
-    public AudioSource bgmAudioSource;    // Tarik Empty Object BGM ke sini!
+   
+    public AudioSource bgmAudioSource;    
 
     private bool isDead = false;
 
@@ -47,23 +45,18 @@ public class PlayerHealth : MonoBehaviour
         isDead = true;
         gameoverUI.SetActive(true);
 
-        // ==========================================
-        // 1. MATIKAN MUSIK LATAR (BGM)
-        // ==========================================
+     
         if (bgmAudioSource != null)
         {
             bgmAudioSource.Stop();
         }
 
-        // ==========================================
-        // 2. PUTAR AUDIO GAME OVER
-        // ==========================================
         if (playerAudioSource != null && gameOverClip != null)
         {
             playerAudioSource.PlayOneShot(gameOverClip);
         }
 
-        Time.timeScale = 0f; // Game berhenti
+        Time.timeScale = 0f; 
         Debug.Log("Player has died.");
     }
 
