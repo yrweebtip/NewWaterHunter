@@ -7,14 +7,14 @@ public class PauseMenu : MonoBehaviour
     public GameObject pauseMenuCanvas;
 
     [Header("Pengaturan Audio UI")]
-    public AudioSource uiAudioSource; // Sumber suara khusus UI
-    public AudioClip suaraPause;      // Suara saat panel pause terbuka
-    public AudioClip suaraResume;     // Suara saat kembali bermain
-    public AudioClip suaraKeluar;     // Suara saat menekan tombol ke Main Menu
+    public AudioSource uiAudioSource; 
+    public AudioClip suaraPause;      
+    public AudioClip suaraResume;     
+    public AudioClip suaraKeluar;    
 
     private void Start()
     {
-        // Pastikan panel pause mati dan waktu berjalan normal saat game mulai
+        
         if (pauseMenuCanvas != null)
         {
             pauseMenuCanvas.SetActive(false);
@@ -22,9 +22,7 @@ public class PauseMenu : MonoBehaviour
         Time.timeScale = 1f;
     }
 
-    // ==========================================
-    // HUBUNGKAN KE TOMBOL UI PAUSE DI LAYAR (⏸)
-    // ==========================================
+   
     public void PauseGame()
     {
         // Putar suara pause
@@ -38,13 +36,17 @@ public class PauseMenu : MonoBehaviour
             pauseMenuCanvas.SetActive(true);
         }
 
-        // Hentikan waktu game
         Time.timeScale = 0f;
     }
 
-    // ==========================================
-    // HUBUNGKAN KE TOMBOL UI RESUME DI DALAM PANEL (▶)
-    // ==========================================
+    public void RetryLevel()
+    {
+        Time.timeScale = 1f;
+
+        string currentSceneName = SceneManager.GetActiveScene().name;
+        SceneManager.LoadScene(currentSceneName);
+    }
+
     public void ResumeGame()
     {
         // Putar suara resume
@@ -58,7 +60,7 @@ public class PauseMenu : MonoBehaviour
             pauseMenuCanvas.SetActive(false);
         }
 
-        // Lanjutkan waktu game
+
         Time.timeScale = 1f;
     }
 
