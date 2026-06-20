@@ -8034,7 +8034,7 @@ MonoBehaviour:
   - {fileID: 1086776907}
   patrolSpeed: 2
   waitTimeAtPoint: 2
-  player: {fileID: 0}
+  player: {fileID: 770005130}
   chaseSpeed: 2
   detectionRange: 7
   stoppingDistance: 1
@@ -12532,7 +12532,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5547064371127251729, guid: 72b05f133551a7b45a697a24d7ce5674, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.7758636
+      value: -12.98
       objectReference: {fileID: 0}
     - target: {fileID: 5547064371127251729, guid: 72b05f133551a7b45a697a24d7ce5674, type: 3}
       propertyPath: m_LocalPosition.y
@@ -18785,13 +18785,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1127678926}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 54.9, y: 0.29, z: 62.074}
+  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 54.9, y: -1.26, z: 51.874}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1881397364}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Father: {fileID: 1697235120}
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!1001 &1130912371
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -27041,6 +27041,7 @@ Transform:
   m_Children:
   - {fileID: 770005130}
   - {fileID: 2138196729}
+  - {fileID: 1127678927}
   - {fileID: 760762678}
   - {fileID: 1881397364}
   m_Father: {fileID: 0}
@@ -33398,7 +33399,6 @@ Transform:
   - {fileID: 7090321212835054537}
   - {fileID: 544086932}
   - {fileID: 3828243942587722840}
-  - {fileID: 1127678927}
   m_Father: {fileID: 1697235120}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1890010492
@@ -35020,7 +35020,7 @@ MonoBehaviour:
   - {fileID: 1092188598}
   patrolSpeed: 2
   waitTimeAtPoint: 2
-  player: {fileID: 0}
+  player: {fileID: 770005130}
   chaseSpeed: 2
   detectionRange: 7
   stoppingDistance: 1
@@ -35308,7 +35308,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4820761477459885616, guid: b302dc56aae93cd4aa5151aeeda7d6e2, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5.9898834
+      value: 1.19
       objectReference: {fileID: 0}
     - target: {fileID: 4820761477459885616, guid: b302dc56aae93cd4aa5151aeeda7d6e2, type: 3}
       propertyPath: m_LocalPosition.y
