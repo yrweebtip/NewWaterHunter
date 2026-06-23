@@ -37042,6 +37042,18 @@ PrefabInstance:
       propertyPath: tombolBukaCrafting
       value: 
       objectReference: {fileID: 983381257}
+    - target: {fileID: 3354639489748096792, guid: f1e7aceaa6827be47bb2f0e00c59c764, type: 3}
+      propertyPath: requiredItems.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3354639489748096792, guid: f1e7aceaa6827be47bb2f0e00c59c764, type: 3}
+      propertyPath: 'requiredItems.Array.data[0]'
+      value: ArangIjukSponsBatuBotol
+      objectReference: {fileID: 0}
+    - target: {fileID: 5154090134187047470, guid: f1e7aceaa6827be47bb2f0e00c59c764, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 6453904915796899215, guid: f1e7aceaa6827be47bb2f0e00c59c764, type: 3}
       propertyPath: m_Text
       value: 'Meja Kreasi

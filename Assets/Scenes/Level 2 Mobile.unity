@@ -10960,7 +10960,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2931990386213047178, guid: f1e7aceaa6827be47bb2f0e00c59c764, type: 3}
       propertyPath: m_FontData.m_FontSize
-      value: 14
+      value: 22
       objectReference: {fileID: 0}
     - target: {fileID: 3354639489748096792, guid: f1e7aceaa6827be47bb2f0e00c59c764, type: 3}
       propertyPath: craftingCanvas
@@ -10996,7 +10996,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5154090134187047470, guid: f1e7aceaa6827be47bb2f0e00c59c764, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 50
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 5154090134187047470, guid: f1e7aceaa6827be47bb2f0e00c59c764, type: 3}
       propertyPath: m_SizeDelta.y
