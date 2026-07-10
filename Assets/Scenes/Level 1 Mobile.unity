@@ -14059,6 +14059,63 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -3224106604066354699, guid: 4aad3a02d5b2bd44f882e6c0c971bf72, type: 3}
+--- !u!1001 &1011861131
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 8172327067511695, guid: 8e30c5fbe72d72940af5f17150b8f534, type: 3}
+      propertyPath: m_Name
+      value: BotolFiltrasi
+      objectReference: {fileID: 0}
+    - target: {fileID: 817078000161435957, guid: 8e30c5fbe72d72940af5f17150b8f534, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 2.2958107
+      objectReference: {fileID: 0}
+    - target: {fileID: 817078000161435957, guid: 8e30c5fbe72d72940af5f17150b8f534, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.7100427
+      objectReference: {fileID: 0}
+    - target: {fileID: 817078000161435957, guid: 8e30c5fbe72d72940af5f17150b8f534, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 6.855301
+      objectReference: {fileID: 0}
+    - target: {fileID: 817078000161435957, guid: 8e30c5fbe72d72940af5f17150b8f534, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 817078000161435957, guid: 8e30c5fbe72d72940af5f17150b8f534, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 817078000161435957, guid: 8e30c5fbe72d72940af5f17150b8f534, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 817078000161435957, guid: 8e30c5fbe72d72940af5f17150b8f534, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 817078000161435957, guid: 8e30c5fbe72d72940af5f17150b8f534, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 817078000161435957, guid: 8e30c5fbe72d72940af5f17150b8f534, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 817078000161435957, guid: 8e30c5fbe72d72940af5f17150b8f534, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 8e30c5fbe72d72940af5f17150b8f534, type: 3}
 --- !u!1001 &1016849953
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -37044,11 +37101,27 @@ PrefabInstance:
       objectReference: {fileID: 983381257}
     - target: {fileID: 3354639489748096792, guid: f1e7aceaa6827be47bb2f0e00c59c764, type: 3}
       propertyPath: requiredItems.Array.size
-      value: 1
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 3354639489748096792, guid: f1e7aceaa6827be47bb2f0e00c59c764, type: 3}
       propertyPath: 'requiredItems.Array.data[0]'
-      value: ArangIjukSponsBatuBotol
+      value: Arang
+      objectReference: {fileID: 0}
+    - target: {fileID: 3354639489748096792, guid: f1e7aceaa6827be47bb2f0e00c59c764, type: 3}
+      propertyPath: 'requiredItems.Array.data[1]'
+      value: Ijuk
+      objectReference: {fileID: 0}
+    - target: {fileID: 3354639489748096792, guid: f1e7aceaa6827be47bb2f0e00c59c764, type: 3}
+      propertyPath: 'requiredItems.Array.data[2]'
+      value: Kerikil
+      objectReference: {fileID: 0}
+    - target: {fileID: 3354639489748096792, guid: f1e7aceaa6827be47bb2f0e00c59c764, type: 3}
+      propertyPath: 'requiredItems.Array.data[3]'
+      value: Botol
+      objectReference: {fileID: 0}
+    - target: {fileID: 3354639489748096792, guid: f1e7aceaa6827be47bb2f0e00c59c764, type: 3}
+      propertyPath: 'requiredItems.Array.data[4]'
+      value: Spons
       objectReference: {fileID: 0}
     - target: {fileID: 5154090134187047470, guid: f1e7aceaa6827be47bb2f0e00c59c764, type: 3}
       propertyPath: m_SizeDelta.y
@@ -37188,3 +37261,4 @@ SceneRoots:
   - {fileID: 924444925}
   - {fileID: 6399226}
   - {fileID: 1868902293}
+  - {fileID: 1011861131}
